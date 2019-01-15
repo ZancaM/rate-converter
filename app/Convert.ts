@@ -3,9 +3,9 @@ import * as fs from "fs";
 
 export default class Convert {
 
-    static convert(filePath: string, options: { sheet?: string, newName?: string, removeTrailingZeros?: boolean }) {
+    static convert(filePath: string, options: { sheet?: string, newName?: string, removeTrailingZeros?: string }) {
         console.log(`Reading ${filePath}`);
-        const removeTrailingZeros = options.removeTrailingZeros ? options.removeTrailingZeros : true;
+        const removeTrailingZeros = options.removeTrailingZeros === 'true';
         const newFileName = options.newName ? options.newName : 'newRateFile';
         let xlsxContent = xlsx.readFile(filePath);
         console.log(`Processing ${filePath} ...`);
@@ -25,9 +25,8 @@ export default class Convert {
                 'value': row.slice(1, row.length).join(',')
             }
         });
-        console.log(`Saving to ${__dirname}/${newFileName}.json`);
+        console.log(`Saving to ${newFileName}.json`);
         fs.writeFileSync(`${newFileName}.json`, JSON.stringify(rateJSONData,null,2));
-
         return;
     }
 }
