@@ -3,8 +3,9 @@ import * as fs from "fs";
 
 export default class Convert {
 
-    static convert(filePath: string, options: { sheet?: string, newName?: string }) {
+    static convert(filePath: string, options: { sheet?: string, newName?: string, removeTrailingZeros?: boolean }) {
         console.log(`Reading ${filePath}`);
+        const removeTrailingZeros = options.removeTrailingZeros ? options.removeTrailingZeros : true;
         const newFileName = options.newName ? options.newName : 'newRateFile';
         let xlsxContent = xlsx.readFile(filePath);
         console.log(`Processing ${filePath} ...`);
@@ -14,6 +15,11 @@ export default class Convert {
 
         let rows = xlsx.utils.sheet_to_json(sheet, {header: 1}) as [string[] | number[]];
         let rateJSONData = rows.map( row =>  {
+            if(removeTrailingZeros) {
+                while(row[row.length - 1] === 0) {
+                    row.pop();
+                }
+            }
             return {
                 'key': row[0],
                 'value': row.slice(1, row.length).join(',')
