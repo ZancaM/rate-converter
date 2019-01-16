@@ -3,20 +3,20 @@ import * as fs from "fs";
 
 export default class Convert {
 
-    static convert(filePath: string, options: { sheet?: string, newName?: string, removeTrailingZeros?: string }) {
+    static convert(filePath: string, options: { sheet?: string, name?: string, removeTrailingZeros?: string }) {
         console.log(`Reading ${filePath}`);
         const removeTrailingZeros = options.removeTrailingZeros === 'true';
-        const newFileName = options.newName ? options.newName : 'newRateFile';
-        let xlsxContent = xlsx.readFile(filePath);
+        const newFileName = options.name ? options.name : 'newRateFile';
+        let xlsxContent = xlsx.readFile(filePath, {type: 'string', raw: true});
         console.log(`Processing ${filePath} ...`);
         const sheetName = options.sheet || xlsxContent.SheetNames[0];
         let sheet = xlsxContent.Sheets[sheetName];
         console.log(`Converting ${filePath} to JSON object`);
 
-        let rows = xlsx.utils.sheet_to_json(sheet, {header: 1}) as [string[] | number[]];
+        let rows = xlsx.utils.sheet_to_json(sheet, {header: 1, raw: false}) as [string[] | number[]];
         let rateJSONData = rows.map( row =>  {
             if(removeTrailingZeros) {
-                while(row[row.length - 1] === 0) {
+                while(row[row.length - 1] === '0') {
                     row.pop();
                 }
             }
