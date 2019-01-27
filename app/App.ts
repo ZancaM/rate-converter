@@ -3,6 +3,7 @@
 import * as commander from 'commander';
 import chalk from 'chalk';
 import Convert from './Convert';
+import Replace from './Replace';
 
 commander
     .command('convert <filePath>')
@@ -14,6 +15,17 @@ commander
     .action(function(filePath, options){
         console.log(chalk.yellow('========= Beginning Conversion =========='));
         Convert.convert(filePath, options);
+    });
+
+commander
+    .command('replace <folderPath>')
+    .alias('r')
+    .description('renames and text find and replaces files having the passed string in it')
+    .option("-f, --from [from]", "Word to find")
+    .option("-n, --name [newName]", "new name")
+    .action(function(filePath, options){
+        console.log(chalk.red('========= Beginning Conversion =========='));
+        Replace.convert(filePath, options);
     });
 
 commander.parse(process.argv);
