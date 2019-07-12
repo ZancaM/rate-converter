@@ -4,6 +4,7 @@ import * as commander from 'commander';
 import chalk from 'chalk';
 import Convert from './Convert';
 import Replace from './Replace';
+import Shift from './Shift';
 
 commander
     .command('convert <filePath>')
@@ -26,6 +27,16 @@ commander
     .action(function(filePath, options){
         console.log(chalk.red('========= Beginning Conversion =========='));
         Replace.convert(filePath, options);
+    });
+
+commander
+    .command('shift <filePath>')
+    .alias('s')
+    .description('shifts rates by n number of spaces')
+    .option("-n, --num [num]", "Number of spaces to shift")
+    .action(function(filePath, options){
+        console.log(chalk.red('========= Shifting =========='));
+        Shift.shift(filePath, options);
     });
 
 commander.parse(process.argv);
