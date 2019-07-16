@@ -13,5 +13,10 @@ Make sure you are using node 10+
 
 **Example:**
 
+Convert Rates to JSON
+
 `rate-converter convert ratefile.xlsx -n outputFileName`
 
+Convert CONTROL.xlsb (Illustration_Report tab) to Illustration
+
+`rate-converter illustration CONTROL.xlsb -c illustrationConfig.json -d PUA`

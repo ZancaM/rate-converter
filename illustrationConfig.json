@@ -1,0 +1,75 @@
+{
+    "sheetName": "Illustration_Report",
+    "headerRow": 12,
+    "headerMapping": {
+        "PUA": {
+            "policyYear": "Pol Yr",
+            "ageEndYear": "Age End Year",
+            "contractPremiumBegYear": "Contract Premium Beg Year",
+            "guaranteedCashValueEndYear": "Guar Cash Value End Year",
+            "guaranteedDeathBenefitEndYear": "Guar DB End Year",
+            "annualDividendEndYear": "Annual Dividend End Year",
+            "cashValueOfAdditionsEndYear": "Cash Value of Additions End Year",
+            "totalCashValueEndYear": "Total CV End of Year",
+            "paidUpAdditionsEndYear": "PUA End Year",
+            "totalDeathBenefitEndYear": "Total DB End of Year",
+            "totalPaidUpInsuranceEndYear": "Total Paid-up Insurance End Year"
+        },
+        "Cash": {
+            "dividendPaidInCashBegYear": "Div Paid in Cash Beg Year",
+            "taxOnDistributionBegYear": "Tax on Dist Beg Year",
+            "annualNetOutlayBegYear": "Annual Net Outlay Beg Year",
+            "policyYear": "Pol Yr",
+            "ageEndYear": "Age End Year",
+            "contractPremiumBegYear": "Contract Premium Beg Year",
+            "guaranteedCashValueEndYear": "Guar Cash Value End Year",
+            "guaranteedDeathBenefitEndYear": "Guar DB End Year",
+            "totalCashValueEndYear": "Total CV End of Year",
+            "totalDeathBenefitEndYear": "Total DB End of Year",
+            "totalPaidUpInsuranceEndYear": "Total Paid-up Insurance End Year"
+        },
+        "PRPUA": {
+            "policyYear": "Pol Yr",
+            "ageEndYear": "Age End Year",
+            "contractPremiumBegYear": "Contract Premium Beg Year",
+            "guaranteedCashValueEndYear": "Guar Cash Value End Year",
+            "guaranteedDeathBenefitEndYear": "Guar DB End Year",
+            "annualDividendEndYear": "Annual Dividend End Year",
+            "cashValueOfAdditionsEndYear": "Cash Value of Additions End Year",
+            "totalCashValueEndYear": "Total CV End of Year",
+            "paidUpAdditionsEndYear": "PUA End Year",
+            "totalDeathBenefitEndYear": "Total DB End of Year",
+            "totalPaidUpInsuranceEndYear": "Total Paid-up Insurance End Year",
+            "netPremiumBegYear": "Net Prem Beg Year"
+
+        },
+        "PRCash": {
+            "policyYear": "Pol Yr",
+            "ageEndYear": "Age End Year",
+            "contractPremiumBegYear": "Contract Premium Beg Year",
+            "guaranteedCashValueEndYear": "Guar Cash Value End Year",
+            "guaranteedDeathBenefitEndYear": "Guar DB End Year",
+            "annualDividendEndYear": "Annual Dividend End Year",
+            "totalCashValueEndYear": "Total CV End of Year",
+            "totalDeathBenefitEndYear": "Total DB End of Year",
+            "netPremiumBegYear": "Net Prem Beg Year",
+            "dividendPaidInCashBegYear": "Div Paid in Cash Beg Year",
+            "taxOnDistributionBegYear": "Tax on Dist Beg Year",
+            "annualNetOutlayBegYear": "Annual Net Outlay Beg Year"
+        },
+        "Accumulate": {
+            "policyYear": "Pol Yr",
+            "ageEndYear": "Age End Year",
+            "contractPremiumBegYear": "Contract Premium Beg Year",
+            "guaranteedCashValueEndYear": "Guar Cash Value End Year",
+            "guaranteedDeathBenefitEndYear": "Guar DB End Year",
+            "annualDividendEndYear": "Annual Dividend End Year",
+            "totalCashValueEndYear": "Total CV End of Year",
+            "totalDeathBenefitEndYear": "Total DB End of Year",
+            "taxOnDistributionBegYear": "Tax on Dist Beg Year",
+            "annualNetOutlayBegYear": "Annual Net Outlay Beg Year",
+            "cashValueOfAccumsEndYear": "Cash Value of Accums End Year",
+            "totalPaidUpInsuranceEndYear": "Total Paid-up Insurance End Year"
+        }
+    }
+}

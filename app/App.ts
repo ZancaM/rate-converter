@@ -1,10 +1,11 @@
-#!/usr/bin/env node
+#!/usr/bin/env node --max_old_space_size=4096
 
 import * as commander from 'commander';
 import chalk from 'chalk';
 import Convert from './Convert';
 import Replace from './Replace';
 import Shift from './Shift';
+import Illustration from './Illustration';
 
 commander
     .command('convert <filePath>')
@@ -37,6 +38,17 @@ commander
     .action(function(filePath, options){
         console.log(chalk.red('========= Shifting =========='));
         Shift.shift(filePath, options);
+    });
+
+commander
+    .command('illustration <filePath>')
+    .alias('i')
+    .description('reads excel illustration and maps it to a json using the configuration passed')
+    .option("-c, --configpath [configpath]", "Required: Path of config file")
+    .option("-d, --dividend [dividend]", "Required: Type of dividend option used (Accumulate, PRCash, PRPUA, PUA, Cash)")
+    .action(function(filePath, options){
+        console.log(chalk.red('========= Converting Illustration =========='));
+        Illustration.convert(filePath, options);
     });
 
 commander.parse(process.argv);
