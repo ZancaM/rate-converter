@@ -18,7 +18,7 @@ export default class Illustration {
         let rowheaders = rows[config.headerRow - 1] as [any];
         let headers = rowheaders.map( header => header.trim()); // trim leading and trailing spaces
         let headerMapping = config.headerMapping[options.dividend];
-        if(!headerMapping) throw `Error ${options.dividend} option not recognized`;
+        if(!headerMapping) { throw `Error ${options.dividend} option not recognized` }
         let headerToIndex = {} as any;
         for (let header in headerMapping) {
             let index = headers.indexOf(headerMapping[header]);
@@ -41,8 +41,12 @@ export default class Illustration {
     }
 
     static adjustValue(value: string) {
-        if(value.trim() === '-' || value === '') {
+        value = value.trim();
+        if(value === '-' || value === '') {
             return '0';
+        }
+        if(value.startsWith('(') && value.endsWith(')')) {
+            value = '-' + value.substring(1, value.length-1);
         }
         return parseFloat(value.replace(/,/g, '')) + '';
     }

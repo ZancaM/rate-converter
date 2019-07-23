@@ -26,7 +26,8 @@
             "guaranteedDeathBenefitEndYear": "Guar DB End Year",
             "totalCashValueEndYear": "Total CV End of Year",
             "totalDeathBenefitEndYear": "Total DB End of Year",
-            "totalPaidUpInsuranceEndYear": "Total Paid-up Insurance End Year"
+            "totalPaidUpInsuranceEndYear": "Total Paid-up Insurance End Year",
+            "paidUpAdditionsEndYear": "PUA End Year"
         },
         "PRPUA": {
             "policyYear": "Pol Yr",
