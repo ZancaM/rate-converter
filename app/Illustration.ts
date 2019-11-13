@@ -43,12 +43,12 @@ export default class Illustration {
     static adjustValue(value: string) {
         value = value.trim();
         if(value === '-' || value === '') {
-            return '0';
+            value = '0';
         }
         if(value.startsWith('(') && value.endsWith(')')) {
             value = '-' + value.substring(1, value.length-1);
         }
-        return parseFloat(value.replace(/,/g, '')) + '';
+        return parseFloat(value.replace(/,/g, ''));
     }
 }
 

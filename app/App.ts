@@ -22,7 +22,7 @@ commander
 commander
     .command('replace <folderPath>')
     .alias('r')
-    .description('renames and text find and replaces files having the passed string in it')
+    .description('renames files and finds and replace text having the passed string in it')
     .option("-f, --from [from]", "Word to find")
     .option("-n, --name [newName]", "new name")
     .action(function(filePath, options){
@@ -49,6 +49,15 @@ commander
     .action(function(filePath, options){
         console.log(chalk.red('========= Converting Illustration =========='));
         Illustration.convert(filePath, options);
+    });
+
+commander
+    .command('append <filePath>')
+    .alias('a')
+    .description('append as many zero as the last value in the key')
+    .action(function(filePath, options){
+        console.log(chalk.red('========= Appending =========='));
+        Shift.shift(filePath, options);
     });
 
 commander.parse(process.argv);
