@@ -19,6 +19,8 @@ export default class Imei {
                             let foundOrder = databaseSheet.find(row => row["order id(memo)"] === order["Order ID"])
                             if (foundOrder) {
                                 foundOrder["Inventory detail"] = order["IMEI"]
+                                foundOrder["Subsidiary"] = "Swappie Oy"
+                                foundOrder["Transaction type"] = "Online trade-in"
                                 replacedData.push(foundOrder)
                             }
                         }
