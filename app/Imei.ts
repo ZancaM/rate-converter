@@ -22,6 +22,8 @@ export default class Imei {
                                 foundOrder["Subsidiary"] = "Swappie Oy"
                                 foundOrder["Transaction type"] = "Online trade-in"
                                 replacedData.push(foundOrder)
+                            } else {
+                                console.warn(`ORDER_ID_NOT_FOUND: ${order}`)
                             }
                         }
 
