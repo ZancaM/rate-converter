@@ -6,6 +6,7 @@ import Convert from './Convert';
 import Replace from './Replace';
 import Shift from './Shift';
 import Illustration from './Illustration';
+import Imei from './Imei';
 
 commander
     .command('convert <filePath>')
@@ -26,7 +27,7 @@ commander
     .option("-f, --from [from]", "Word to find")
     .option("-n, --name [newName]", "new name")
     .action(function(filePath, options){
-        console.log(chalk.red('========= Beginning Conversion =========='));
+        console.log(chalk.red('========= Replacing =========='));
         Replace.convert(filePath, options);
     });
 
@@ -58,6 +59,15 @@ commander
     .action(function(filePath, options){
         console.log(chalk.red('========= Appending =========='));
         Shift.shift(filePath, options);
+    });
+
+commander
+    .command('copyimei <filePath1> <filePath2>')
+    .alias('i')
+    .description('')
+    .action(function(filePath1, filePath2, options){
+        console.log(chalk.red('========= Processing IMEI =========='));
+        Imei.run(filePath1, filePath2, options);
     });
 
 commander.parse(process.argv);

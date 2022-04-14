@@ -21,13 +21,14 @@
   "dependencies": {
     "chalk": "^2.4.2",
     "commander": "^2.19.0",
+    "csv-parser": "^3.0.0",
+    "csv-stringify": "^6.0.5",
     "tslint": "^5.12.1",
     "xlsx": "^0.14.3"
   },
   "devDependencies": {
     "@types/chalk": "^2.2.0",
     "@types/commander": "^2.12.2",
-    "@types/node": "^10.12.18",
-    "typescript": "^3.2.2"
+    "@types/node": "^10.17.60"
   }
 }
