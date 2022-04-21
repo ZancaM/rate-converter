@@ -9,6 +9,7 @@ export default class Imei {
 
             let databaseSheet = []
             let replacedData = []
+            let notFound = []
             try {
                 fs.createReadStream(`${folderPath2}`)
                     .pipe(csv())
@@ -23,7 +24,7 @@ export default class Imei {
                                 foundOrder["Transaction type"] = "Online trade-in"
                                 replacedData.push(foundOrder)
                             } else {
-                                console.warn(`ORDER_ID_NOT_FOUND: ${order}`)
+                                notFound.push(order)
                             }
                         }
 
@@ -31,6 +32,11 @@ export default class Imei {
                             header: true
                         }, function (err, output) {
                             fs.writeFileSync(__dirname+'/output.csv', output);
+                        })
+                        stringify(notFound, {
+                            header: true
+                        }, function (err, output) {
+                            fs.writeFileSync(__dirname+'/output_not_found.csv', output);
                         })
                     });
             } catch (e) {
@@ -47,7 +53,7 @@ export default class Imei {
         fs.createReadStream(`${folderPath1}`)
             .pipe(csv())
             .on('data', (data) => {
-                if (data['IMEI'] && data['IMEI'] != '') {
+                if (data['IMEI'] && data['IMEI'] != '' && data['IMEI'].indexOf('X') === -1) {
                     results.push(data)
                 }
             })
